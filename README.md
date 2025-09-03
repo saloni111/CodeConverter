@@ -1,6 +1,6 @@
 # CodeConverter
 
-Hey! 👋 This tool converts code between C and Python. It's like having a translator that speaks both languages!
+Hey! This tool converts code between C and Python. It's like having a translator that speaks both languages!
 
 ## What it does
 
@@ -13,7 +13,7 @@ Hey! 👋 This tool converts code between C and Python. It's like having a trans
 
 1. **Install**: `pip install -r requirements.txt`
 2. **Convert**: `python main.py input.c --output output.py`
-3. **Done!** 🎉
+3. **Done!** 
 
 ## Examples
 
@@ -29,11 +29,11 @@ python main.py mycode.py --output mycode.c
 
 ## What it supports
 
-✅ **Functions** - `int add(int a, int b)` ↔ `def add(a, b):`  
-✅ **Arrays** - `int arr[5]` ↔ `arr = [None] * 5`  
-✅ **Loops** - `while (i < 10)` ↔ `while i < 10:`  
-✅ **Variables** - `int x = 5;` ↔ `x = 5`  
-✅ **Print** - `printf("hello");` ↔ `print("hello")`
+1) **Functions** - `int add(int a, int b)` ↔ `def add(a, b):`  
+2) **Arrays** - `int arr[5]` ↔ `arr = [None] * 5`  
+3) **Loops** - `while (i < 10)` ↔ `while i < 10:`  
+4) **Variables** - `int x = 5;` ↔ `x = 5`  
+5) **Print** - `printf("hello");` ↔ `print("hello")`
 
 ## Test it
 
