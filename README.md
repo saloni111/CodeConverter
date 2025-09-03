@@ -1,55 +1,60 @@
 # CodeConverter
 
-A simple, extensible tool to convert C code to Python (Java coming soon) using Abstract Syntax Trees (AST).
+Hey! 👋 This tool converts code between C and Python. It's like having a translator that speaks both languages!
 
-## Features
-- Parses C code using pycparser
-- Converts C code to Python via an intermediate, language-agnostic AST
-- Supports variable declarations, assignments, print, if/else, while, and for loops
-- Modular and easy to extend for more languages and features
-- Includes automated tests
+## What it does
 
-## Usage
+- **C → Python**: Give it C code, get Python back
+- **Python → C**: Give it Python code, get C back  
+- **Auto-detects** what you're converting
+- **Handles functions, arrays, loops, and more**
+
+## Quick start
+
+1. **Install**: `pip install -r requirements.txt`
+2. **Convert**: `python main.py input.c --output output.py`
+3. **Done!** 🎉
+
+## Examples
+
+**C to Python:**
 ```bash
-python main.py input.c --lang python --output output.py
+python main.py mycode.c --output mycode.py
 ```
 
-## Example
-C input:
-```c
-int a = 0;
-for (a = 0; a < 3; a = a + 1) {
-    if (a % 2 == 0) {
-        printf("%d", a);
-    } else {
-        printf("odd");
-    }
-}
-```
-Python output:
-```python
-a = 0
-a = 0
-while a < 3:
-    if a % 2 == 0:
-        print(a)
-    else:
-        print(odd)
-    a = a + 1
-```
-
-## Setup
+**Python to C:**
 ```bash
-pip install -r requirements.txt
+python main.py mycode.py --output mycode.c
 ```
 
-## Run Tests
+## What it supports
+
+✅ **Functions** - `int add(int a, int b)` ↔ `def add(a, b):`  
+✅ **Arrays** - `int arr[5]` ↔ `arr = [None] * 5`  
+✅ **Loops** - `while (i < 10)` ↔ `while i < 10:`  
+✅ **Variables** - `int x = 5;` ↔ `x = 5`  
+✅ **Print** - `printf("hello");` ↔ `print("hello")`
+
+## Test it
+
 ```bash
 python tests/test_converter.py
+python tests/test_advanced_converter.py
 ```
 
-## Project Structure
-- `main.py`: CLI entry point
-- `parser/`: C parser using pycparser
-- `converter/`: AST nodes, transformer, and code generators
-- `tests/`: Automated tests 
+## Got questions?
+
+- **File not found?** Check your file exists and you're in the right folder
+- **Parse error?** Make sure your code is valid (C needs `int main()`)
+- **Import error?** Run `pip install -r requirements.txt` first
+
+## What it can't do
+
+- Complex C stuff like structs, unions
+- Preprocessor stuff (#include, #define)  
+- Dynamic memory (malloc/free)
+- Multiple files
+
+---
+
+That's it! Pretty simple, right? Just give it code in one language and get it back in the other. Happy converting! 🚀 

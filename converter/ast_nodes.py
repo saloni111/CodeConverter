@@ -36,4 +36,46 @@ class For(ASTNode):
         self.init = init
         self.condition = condition
         self.increment = increment
-        self.body = body 
+        self.body = body
+
+class Function(ASTNode):
+    def __init__(self, name, params, return_type, body):
+        self.name = name
+        self.params = params  # list of (type, name) tuples
+        self.return_type = return_type
+        self.body = body
+
+class FunctionCall(ASTNode):
+    def __init__(self, name, args):
+        self.name = name
+        self.args = args
+
+class Return(ASTNode):
+    def __init__(self, value=None):
+        self.value = value
+
+class Array(ASTNode):
+    def __init__(self, name, size, element_type, values=None):
+        self.name = name
+        self.size = size
+        self.element_type = element_type
+        self.values = values  # initialization values
+
+class ArrayAccess(ASTNode):
+    def __init__(self, array_name, index):
+        self.array_name = array_name
+        self.index = index
+
+class Pointer(ASTNode):
+    def __init__(self, name, target_type, value=None):
+        self.name = name
+        self.target_type = target_type
+        self.value = value
+
+class Dereference(ASTNode):
+    def __init__(self, pointer_name):
+        self.pointer_name = pointer_name
+
+class AddressOf(ASTNode):
+    def __init__(self, var_name):
+        self.var_name = var_name 
